@@ -17,7 +17,7 @@ var totalDrop = 100;
 var totalGarbage = 0;
 var gcircleGroup;
 var p1 = p2 = p3 = p4 = false;
-var volume = 0;
+var volume = 1;
 var volume2 = 1;
 var soundButton1, soundButton2;
 var highscore = 0;
