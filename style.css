@@ -1,0 +1,70 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas{
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  border: 2px solid black;
+}
+.startButtons{
+  background-color: white;
+  border-color: #972c97;
+  border-radius: 5px;
+ /* font-weight: bold; */
+  font-size: medium;
+  color: #13316c;
+  height : 45px;
+  width : 100px
+}
+
+.startButtons:hover{
+  background-color: rgb(0, 183, 255);
+  color: white;
+  border-color: #ffffff;
+  font-weight:bold ;
+  transition: 0.4s;
+  /* font-size: large; */
+  /* font-weight: 900; */
+  /* border-radius: 15px;
+  border-width: 5px */
+  /* height : 65px;
+  width : 120px; */
+ 
+}
+
+.minorButtons{
+  background-color: #ffffff;
+  border-color: #972c97;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #13316c;
+  height : 35px; 
+  width : 130px
+}
+
+#pause{
+  background-color: #ffffff;
+  border-color: #972c97;
+  border-radius: 7px;
+  font-weight: bold;
+  color: #13316c;
+}
+
+#setting{
+  background-color: #ffffff;
+  border-color: #ffffff;
+  border-radius: 7px;
+  font-weight: bold;
+  color: #13316c;
+ 
+}
+
+.sound{
+  background-color: #ffffff;
+  border-color: #972c97;
+  border-radius: 7px;
+  font-weight: bold;
+  color: #13316c;
+}

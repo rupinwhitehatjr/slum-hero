@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="p5.js"></script>
+    <script src="p5.dom.min.js"></script>
+    <script src="p5.sound.min.js"></script>
+    <script src="./p5.play.js"></script>
+    <script src="app.js"></script>
+    <script src="garbage.js"></script>
+    <script src="hero.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-database.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAphwgbrlfBEZYia_Od5Dmo0H1WpcxYoRE",
+            authDomain: "slum-hero.firebaseapp.com",
+            databaseURL: "https://slum-hero.firebaseio.com",
+            projectId: "slum-hero",
+            storageBucket: "slum-hero.appspot.com",
+            messagingSenderId: "387052540156",
+            appId: "1:387052540156:web:dded11ab672e708ac48779"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+</head>
+
+<body>
+    <script src="sketch.js"></script>
+
+
+</body>
+
+</html>
