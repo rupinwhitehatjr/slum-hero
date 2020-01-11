@@ -10,14 +10,14 @@ var gamestate;
 var startButton, junkStoreButton;
 var welcomePlayed = false;
 var replayButton, mainMenuButton;
-var pauseButton, soundButton, settingsButton, exitPauseMenuButton, exitSettingsButton;
+var pauseButton, soundButton, settingsButton, exitPauseMenuButton, exitSettingsButton, deviceModeButton;
 var previousNo = 0;
 var paused = false;
 var totalDrop = 100;
 var totalGarbage = 0;
 var gcircleGroup;
 var p1 = p2 = p3 = p4 = false;
-var volume = 1;
+var volume = 0;
 var volume2 = 1;
 var soundButton1, soundButton2;
 var highscore = 0;
@@ -32,7 +32,7 @@ var width, height;
 var destroyCount = 0;
 
 var roof;
-
+var deviceMode = "📱";
 function preload() {
     bottleImg = loadImage("bottle.png");
     bagImg = loadImage("bag.png");
@@ -175,6 +175,7 @@ function draw() {
 
     resizeCanvas(width, height);
 
+    console.log(deviceMode);
 
     if (!paused) {
         // function gator() { alert('Alligator!!!!'); } setTimeout(gator, 7000);
@@ -225,8 +226,9 @@ function draw() {
         }
         if (gamestate === "play") {
             spawnGarbage(15, 15);
-            dustbinControl();
+            // dustbinControl();
             // mouseControl();
+            setControls();
             // swipeControl();
             createToxic(180, 9);
             scoreDisplay();

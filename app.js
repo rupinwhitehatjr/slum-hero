@@ -176,6 +176,7 @@ function createButtons() {
         settingsButton.style("visibility", "hidden");
         exitSettingsButton.style("visibility", "visible");
         soundButton.style("visibility", "visible");
+        deviceModeButton.style("visibility", "visible");
         gamestate = "settings";
 
     });
@@ -193,7 +194,7 @@ function createButtons() {
         soundButton2.style("visibility", "hidden");
         para.style("visibility", "hidden");
         para2.style("visibility", "hidden");
-
+        deviceModeButton.style("visibility", "hidden");
         click.play();
     });
 
@@ -206,12 +207,14 @@ function createButtons() {
         if (gamestate === "sound") {
             // alert("ok");
             gamestate = preState;
+            deviceModeButton.style("visibility", "visible");
             soundButton1.style("visibility", "hidden");
             soundButton2.style("visibility", "hidden");
         }
         else if (gamestate === "settings" || gamestate === "pause" || gamestate === "over" || gamestate === "loose") {
             preState = gamestate;
             gamestate = "sound";
+            deviceModeButton.style("visibility", "hidden");
 
         }
 
@@ -264,6 +267,22 @@ function createButtons() {
             }
         }
         click.play();
+    })
+
+
+    deviceModeButton = createButton("🎮");
+    deviceModeButton.style("visibility", "hidden");
+    deviceModeButton.class("sound");
+    deviceModeButton.mousePressed(function () {
+
+        if (deviceMode === "💻") {
+            deviceMode = "📱";
+            deviceModeButton.innerText = deviceMode;
+
+        } else if (deviceMode === "📱") {
+            deviceMode = "💻"
+            deviceModeButton.innerText = deviceMode;
+        }
     })
     para = createP("Help the slum hero to collect all the <br>garbage.Swipe your finger to control <br>the hero and try to catch all the garbage.  ");
     para.position(85, 300);
@@ -382,6 +401,10 @@ function displaySettingsMenu() {
     soundButton1.position(soundButton.x + 10, soundButton.y + 30);
     soundButton2.position(soundButton.x + 10, soundButton.y + 60);
     exitSettingsButton.position((width / 2) + 125, height / 2 - 205);
+
+    deviceModeButton.position(soundButton.x, soundButton.y + 30);
+    textSize(30);
+    text(deviceMode, deviceModeButton.x + 40, deviceModeButton.y + 10);
     stat = "mute";
     stat2 = "mute";
     textSize(15);
@@ -514,3 +537,12 @@ function displayLooserMenu() {
 }
 
 
+function setControls() {
+    deviceModeButton.innerText = deviceMode;
+    if (deviceMode === "💻") {
+        dustbinControl();
+    }
+    if (deviceMode === "📱") {
+        mouseControl();
+    }
+}
