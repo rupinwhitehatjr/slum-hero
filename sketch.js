@@ -32,7 +32,7 @@ var width, height;
 var destroyCount = 0;
 
 var roof;
-var deviceMode = "📱";
+var deviceMode = "💻";
 function preload() {
     bottleImg = loadImage("bottle.png");
     bagImg = loadImage("bag.png");
