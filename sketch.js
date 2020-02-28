@@ -114,8 +114,8 @@ function preload() {
 function setup() {
     canvas = createCanvas(width, height);
 
-    width = windowWidth;
-    height = windowHeight;
+    width = displayWidth;
+    height = displayHeight;
 
 
 
@@ -164,8 +164,8 @@ function draw() {
     setHeroBehaviour();
     // console.log(gamestate);
 
-    width = windowWidth;
-    height = windowHeight;
+    width = displayWidth;
+    height = displayHeight;
     dustbin.y = height - 90;
     dustbin.velocityX = 0;
     hero.y = dustbin.y - 40;
@@ -304,7 +304,15 @@ function draw() {
     }
     if (paused) {
         background("#cef4ff");
+        rectMode(CENTER);
+        noFill();
+        strokeWeight(2);
+        stroke(0);
+        rect(width / 2, height / 2, 400, height);
         displayMiniMenu();
+        noStroke();
+        fill("grey")
+        rect(width / 2, hero.y + 90, width, 10);
         if (gamestate === "sound") {
             displaySoundMenu();
             //  displayMiniMenu();
