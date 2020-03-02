@@ -32,7 +32,9 @@ var width, height;
 var destroyCount = 0;
 
 var roof;
-var deviceMode = "💻";
+var deviceMode = "📱";
+
+var newX = 0;
 function preload() {
     bottleImg = loadImage("bottle.png");
     bagImg = loadImage("bag.png");
@@ -165,7 +167,7 @@ function draw() {
     // console.log(gamestate);
 
     width = displayWidth;
-    height = 535;
+    height = 555;
     dustbin.y = height - 70;
     dustbin.velocityX = 0;
     hero.y = dustbin.y - 40;
@@ -229,6 +231,7 @@ function draw() {
             // dustbinControl();
             // mouseControl();
             setControls();
+
             // swipeControl();
             createToxic(180, 9);
             scoreDisplay();
@@ -424,4 +427,8 @@ function setScore() {
         })
 
     }
+}
+function touchMoved(event) {
+    newX = mouseX;
+
 }

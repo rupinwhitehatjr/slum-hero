@@ -133,22 +133,25 @@ function dustbinControl() {
 
 }
 function mouseControl() {
-    dustbin.x = World.mouseX
+    dustbin.x = newX;
     wheel.x = dustbin.x - 13
     hero.x = dustbin.x - 70;
-    // console.log("#", dustbin.velocityX);
-    if (dustbin.velocityX < 0) {
-        // dustbin.velocityX = -7;
-        wheel.rotationSpeed = -9;
-        hero.changeAnimation("walkingb");
-    } if (dustbin.velocityX === 0) {
-        //  dustbin.velocityX = 0;
-        setHeroBehaviour();
-    } if (dustbin.velocityX > 0) {
-        //  dustbin.velocityX = -7;
-        wheel.rotationSpeed = 9;
-        hero.changeAnimation("walkingf");
-    }
+    // dustbin.x = World.mouseX
+    // wheel.x = dustbin.x - 13
+    // hero.x = dustbin.x - 70;
+    // // console.log("#", dustbin.velocityX);
+    // if (dustbin.velocityX < 0) {
+    //     // dustbin.velocityX = -7;
+    //     wheel.rotationSpeed = -9;
+    //     hero.changeAnimation("walkingb");
+    // } if (dustbin.velocityX === 0) {
+    //     //  dustbin.velocityX = 0;
+    //     setHeroBehaviour();
+    // } if (dustbin.velocityX > 0) {
+    //     //  dustbin.velocityX = -7;
+    //     wheel.rotationSpeed = 9;
+    //     hero.changeAnimation("walkingf");
+    // }
 
     // if (dustbin.x < 200) {
     //     // dustbin.velocityX = -7;

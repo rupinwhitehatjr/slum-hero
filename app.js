@@ -543,7 +543,8 @@ function setControls() {
     if (deviceMode === "💻") {
         dustbinControl();
     }
-    if (deviceMode === "📱") {
+    if (deviceMode === "") {
         mouseControl();
     }
+
 }
