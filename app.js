@@ -24,7 +24,7 @@ function scoreDisplay() {
     noFill();
     stroke("#13316c");
     strokeWeight(2);
-    rect(width / 2, 22, 280, 30);
+    rect(width / 2, 22, 400, 30);
     fill("#13316c");
     noStroke();
     textSize(17);
@@ -57,7 +57,7 @@ function scoreDisplay() {
 
 }
 function createButtons() {
-    startButton = createButton("PLAY");
+    startButton = createButton("Play");
     startButton.class("startButtons");
 
     startButton.style("visibility", "hidden");
@@ -65,7 +65,7 @@ function createButtons() {
         gamestate = "play";
         settingsButton.style("visibility", "hidden");
         startButton.style("visibility", "hidden");
-        junkStoreButton.style("visibility", "hidden");
+        storeButton.style("visibility", "hidden");
         pauseButton.style("visibility", "visible");
         mainMenuButton.style("visibility", "hidden");
         replayButton.style("visibility", "hidden");
@@ -74,11 +74,11 @@ function createButtons() {
         paused = false;
         click.play();
     });
-    junkStoreButton = createButton("JUNK STORE");
-    junkStoreButton.class("startButtons");
+    storeButton = createButton("Store");
+    storeButton.class("startButtons");
 
-    junkStoreButton.style("visibility", "hidden");
-    junkStoreButton.mousePressed(function () {
+    storeButton.style("visibility", "hidden");
+    storeButton.mousePressed(function () {
         gamestate = "junkPlay";
         click.play();
     })
@@ -129,7 +129,7 @@ function createButtons() {
     // nextLevelButton.style("width", 100)
 
     pauseButton = createButton("II");
-    pauseButton.position(20, 20);
+    pauseButton.position(2, 10);
     pauseButton.id("pause");
     pauseButton.style("visibility", "hidden");
     pauseButton.mousePressed(function () {
@@ -168,11 +168,11 @@ function createButtons() {
     })
 
     settingsButton = createButton("⚙");
-    settingsButton.position(20, 20);
+    settingsButton.position(10, 10);
     settingsButton.id("setting");
     settingsButton.mousePressed(function () {
         startButton.style("visibility", "hidden");
-        junkStoreButton.style("visibility", "hidden");
+        storeButton.style("visibility", "hidden");
         settingsButton.style("visibility", "hidden");
         exitSettingsButton.style("visibility", "visible");
         soundButton.style("visibility", "visible");
@@ -353,7 +353,7 @@ function getRandomNo(minRange, maxRange) {
 function displayMiniMenu() {
     rectMode(CENTER);
     var x = width / 2 - 110;
-    var y = height / 2 - 170;
+    var y = height / 2 - 120;
     fill("#fbe843");
     stroke("#13316c");
     rect(width / 2, height / 2 - 70, 300, 380);
@@ -476,7 +476,7 @@ function setButtonColour() {
 function displayOverMenu() {
 
     var x = width / 2 - 110;
-    var y = height / 2 - 150;
+    var y = height / 2 - 100;
     fill("#fbe843");
     stroke("#13316c");
     rect(width / 2, height / 2 - 70, 300, 380);
@@ -506,10 +506,10 @@ function displayOverMenu() {
 }
 function displayLooserMenu() {
     var x = width / 2 - 110;
-    var y = height / 2 - 150;
+    var y = height / 2 - 100;
     fill("#fbe843");
     stroke("#13316c");
-    rect(width / 2, height / 2 - 70, 300, 380);
+    rect(width / 2, height / 2 - 20, 300, 380);
     fill("#13316c");
     textSize(50);
     strokeWeight(1);

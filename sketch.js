@@ -7,7 +7,7 @@ var barFace;
 // var bottleImg, jarImg, canImg, cupImg;
 var ground;
 var gamestate;
-var startButton, junkStoreButton;
+var startButton, storeButton;
 var welcomePlayed = false;
 var replayButton, mainMenuButton;
 var pauseButton, soundButton, settingsButton, exitPauseMenuButton, exitSettingsButton, deviceModeButton;
@@ -115,7 +115,7 @@ function setup() {
     canvas = createCanvas(width, height);
 
     width = displayWidth;
-    height = displayHeight;
+    height = 500;
 
 
 
@@ -165,8 +165,8 @@ function draw() {
     // console.log(gamestate);
 
     width = displayWidth;
-    height = displayHeight;
-    dustbin.y = height - 90;
+    height = 500;
+    dustbin.y = height - 70;
     dustbin.velocityX = 0;
     hero.y = dustbin.y - 40;
     wheel.y = dustbin.y + 56;
@@ -190,17 +190,17 @@ function draw() {
         rect(width / 2, hero.y + 90, width, 10);
 
         catchGarbage();
-        // console.log(startButton.width, junkStoreButton.width);
+        // console.log(startButton.width, storeButton.width);
         if (gamestate === "start") {
-            startButton.position((width - 100) / 2, height / 4);
-            junkStoreButton.position((width - 100) / 2, (height / 4) + 50);
+            startButton.position(((width - 100) / 2), ((height / 4) - 35));
+            storeButton.position(((width - 100) / 2), ((height / 4) + 3));
             dustbin.x = width / 2 - 50;
             wheel.x = dustbin.x - 13
             hero.x = dustbin.x - 70;
             imageMode(CENTER);
             startButton.style("visibility", "visible");
-            junkStoreButton.style("visibility", "visible");
-            image(logo, width / 2, 80, 260, 80);
+            storeButton.style("visibility", "visible");
+            image(logo, width / 2, 50, 260, 80);
             setHeroBehaviour();
             textSize(12);
             if (frameCount >= 60) {

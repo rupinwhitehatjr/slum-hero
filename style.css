@@ -9,14 +9,14 @@ html, body {
   border: 2px solid black;
 } */
 .startButtons{
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border-color: #972c97;
   border-radius: 5px;
  /* font-weight: bold; */
   font-size: medium;
   color: #13316c;
-  height : 45px;
-  width : 100px
+  height : 30px;
+  width : 70px
 }
 
 .startButtons:hover{
@@ -40,8 +40,8 @@ html, body {
   border-radius: 5px;
   font-weight: bold;
   color: #13316c;
-  height : 35px; 
-  width : 130px
+  height : 30px; 
+  width : 100px
 }
 
 #pause{
