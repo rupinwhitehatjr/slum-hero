@@ -9,11 +9,11 @@ var ground;
 var gamestate;
 var startButton, storeButton;
 var welcomePlayed = false;
-var replayButton, mainMenuButton;
+var replayButton, homeButton;
 var pauseButton, soundButton, settingsButton, exitPauseMenuButton, exitSettingsButton, deviceModeButton;
 var previousNo = 0;
 var paused = false;
-var totalDrop = 100;
+var totalDrop = 10;
 var totalGarbage = 0;
 var gcircleGroup;
 var p1 = p2 = p3 = p4 = false;
@@ -115,7 +115,7 @@ function setup() {
     canvas = createCanvas(width, height);
 
     width = displayWidth;
-    height = 500;
+    height = 630;
 
 
 
@@ -165,7 +165,7 @@ function draw() {
     // console.log(gamestate);
 
     width = displayWidth;
-    height = 500;
+    height = 595;
     dustbin.y = height - 70;
     dustbin.velocityX = 0;
     hero.y = dustbin.y - 40;
@@ -266,8 +266,8 @@ function draw() {
             if (preState === "settings") {
                 // alert("working")
                 displaySettingsMenu();
-                text(stat, soundButton.x + 100, soundButton1.y + 5);
-                text(stat2, soundButton.x + 100, soundButton2.y + 5);
+                text(stat, soundButton.x + 110, soundButton1.y + 13);
+                text(stat2, soundButton.x + 110, soundButton2.y + 13);
             } else if (preState === "over") {
                 displayOverMenu()
             } else if (preState === "loose") {
@@ -286,7 +286,7 @@ function draw() {
             // toxicGroup.destroy()
             displayOverMenu();
             replayButton.style("visibility", "visible");
-            mainMenuButton.style("visibility", "visible");
+            homeButton.style("visibility", "visible");
         }
 
         if (gamestate === "junkPlay") {

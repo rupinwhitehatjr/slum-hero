@@ -67,7 +67,7 @@ function createButtons() {
         startButton.style("visibility", "hidden");
         storeButton.style("visibility", "hidden");
         pauseButton.style("visibility", "visible");
-        mainMenuButton.style("visibility", "hidden");
+        homeButton.style("visibility", "hidden");
         replayButton.style("visibility", "hidden");
         garbageGroup = createGroup();
         reset();
@@ -89,7 +89,7 @@ function createButtons() {
     replayButton.class("minorButtons");
     replayButton.mousePressed(function () {
         replayButton.style("visibility", "hidden");
-        mainMenuButton.style("visibility", "hidden");
+        homeButton.style("visibility", "hidden");
         exitPauseMenuButton.style("visibility", "hidden");
         pauseButton.style("visibility", "visible");
         soundButton.style("visibility", "hidden");
@@ -103,18 +103,18 @@ function createButtons() {
     });
 
 
-    mainMenuButton = createButton("Main menu");
-    mainMenuButton.position(70, 440);
-    mainMenuButton.class("minorButtons");
-    mainMenuButton.style("visibility", "hidden");
-    mainMenuButton.mousePressed(function () {
+    homeButton = createButton("Home");
+    homeButton.position(70, 440);
+    homeButton.class("minorButtons");
+    homeButton.style("visibility", "hidden");
+    homeButton.mousePressed(function () {
         click.play();
         paused = false;
         gamestate = "start";
         settingsButton.style("visibility", "visible");
         pauseButton.style("visibility", "hidden");
         replayButton.style("visibility", "hidden");
-        mainMenuButton.style("visibility", "hidden");
+        homeButton.style("visibility", "hidden");
         exitPauseMenuButton.style("visibility", "hidden");
         soundButton.style("visibility", "hidden");
         soundButton1.style("visibility", "hidden");
@@ -159,7 +159,7 @@ function createButtons() {
         paused = false;
         pauseButton.style("visibility", "visible");
         exitPauseMenuButton.style("visibility", "hidden");
-        mainMenuButton.style("visibility", "hidden");
+        homeButton.style("visibility", "hidden");
         replayButton.style("visibility", "hidden");
         soundButton.style("visibility", "hidden");
         soundButton1.style("visibility", "hidden");
@@ -353,7 +353,7 @@ function getRandomNo(minRange, maxRange) {
 function displayMiniMenu() {
     rectMode(CENTER);
     var x = width / 2 - 110;
-    var y = height / 2 - 120;
+    var y = height / 2 - 160;
     fill("#fbe843");
     stroke("#13316c");
     rect(width / 2, height / 2 - 70, 300, 380);
@@ -371,16 +371,17 @@ function displayMiniMenu() {
     text("Paper caught : " + paper, x, y + 180);
     text("Organic caught : " + organic, x, y + 210);
 
-    mainMenuButton.style("visibility", "visible");
+    homeButton.style("visibility", "visible");
     replayButton.style("visibility", "visible");
     exitPauseMenuButton.style("visibility", "visible");
 
-    soundButton.position(width / 2 + 90, y - 75);
+    soundButton.position(width / 2 + 70, y - 95);
     soundButton1.position(soundButton.x + 10, soundButton.y + 30);
     soundButton2.position(soundButton.x + 10, soundButton.y + 60);
     exitPauseMenuButton.position(soundButton.x + 40, soundButton.y);
-    mainMenuButton.position(width / 2 - 130, height / 2 + 90);
-    replayButton.position(width / 2 + 20, height / 2 + 90);
+    var y1 = y + 230
+    homeButton.position(width / 2 - 130, y1);
+    replayButton.position(width / 2 + 20, y1);
 
 }
 
@@ -394,17 +395,17 @@ function displaySettingsMenu() {
     rect(width / 2, height / 2 + 60, 270, 200);
     noStroke();
     fill("#13316c");
-    text("Sound", soundButton.x + 40, soundButton.y + 5);
+    text("Sound", soundButton.x + 40, soundButton.y + 15);
     textSize(40);
     text("Settings", width / 2 - 80, exitSettingsButton.y + 30);
     soundButton.position(width / 2 - 60, height / 2 - 120);
     soundButton1.position(soundButton.x + 10, soundButton.y + 30);
     soundButton2.position(soundButton.x + 10, soundButton.y + 60);
-    exitSettingsButton.position((width / 2) + 125, height / 2 - 205);
+    exitSettingsButton.position((width / 2) + 105, height / 2 - 205);
 
     deviceModeButton.position(soundButton.x, soundButton.y + 30);
     textSize(30);
-    text(deviceMode, deviceModeButton.x + 40, deviceModeButton.y + 10);
+    text(deviceMode, deviceModeButton.x + 40, deviceModeButton.y + 20);
     stat = "mute";
     stat2 = "mute";
     textSize(15);
@@ -476,7 +477,7 @@ function setButtonColour() {
 function displayOverMenu() {
 
     var x = width / 2 - 110;
-    var y = height / 2 - 100;
+    var y = height / 2 - 150;
     fill("#fbe843");
     stroke("#13316c");
     rect(width / 2, height / 2 - 70, 300, 380);
@@ -494,13 +495,13 @@ function displayOverMenu() {
     text("Paper caught : " + paper, x, y + 180);
     text("Organic caught : " + organic, x, y + 210);
 
-    mainMenuButton.style("visibility", "visible");
+    homeButton.style("visibility", "visible");
     replayButton.style("visibility", "visible");
-    mainMenuButton.position(width / 2 - 130, height / 2 + 90);
+    homeButton.position(width / 2 - 130, height / 2 + 90);
     replayButton.position(width / 2 + 20, height / 2 + 90);
 
     soundButton.style("visibility", "visible");
-    soundButton.position(width / 2 + 120, y - 95);
+    soundButton.position(width / 2 + 110, y - 95);
     soundButton1.position(soundButton.x - 5, soundButton.y + 30);
     soundButton2.position(soundButton.x, soundButton.y + 60);
 }
@@ -524,7 +525,7 @@ function displayLooserMenu() {
     text("Paper caught : " + paper, x, y + 180);
     text("Organic caught : " + organic, x, y + 210);
 
-    mainMenuButton.style("visibility", "visible");
+    homeButton.style("visibility", "visible");
     replayButton.style("visibility", "visible");
 
     soundButton.style("visibility", "visible");
@@ -532,8 +533,8 @@ function displayLooserMenu() {
     soundButton1.position(soundButton.x - 5, soundButton.y + 30);
     soundButton2.position(soundButton.x, soundButton.y + 60);
 
-    mainMenuButton.position(width / 2 - 130, height / 2 + 90);
-    replayButton.position(width / 2 + 20, height / 2 + 90);
+    homeButton.position(width / 2 - 130, height / 2 + 130);
+    replayButton.position(width / 2 + 20, height / 2 + 130);
 }
 
 
