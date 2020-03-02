@@ -165,7 +165,7 @@ function draw() {
     // console.log(gamestate);
 
     width = displayWidth;
-    height = 595;
+    height = 555;
     dustbin.y = height - 70;
     dustbin.velocityX = 0;
     hero.y = dustbin.y - 40;
