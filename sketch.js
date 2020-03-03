@@ -167,7 +167,7 @@ function draw() {
     // console.log(gamestate);
 
     width = displayWidth;
-    height = 555;
+    height = 535;
     dustbin.y = height - 70;
     dustbin.velocityX = 0;
     hero.y = dustbin.y - 40;
@@ -230,7 +230,9 @@ function draw() {
             spawnGarbage(15, 15);
             // dustbinControl();
             // mouseControl();
-            setControls();
+            dustbin.x = newX;
+            wheel.x = dustbin.x - 13;
+            hero.x = dustbin.x - 70;
 
             // swipeControl();
             createToxic(180, 9);
@@ -430,5 +432,4 @@ function setScore() {
 }
 function touchMoved(event) {
     newX = mouseX;
-
 }
