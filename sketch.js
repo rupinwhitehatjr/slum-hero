@@ -157,7 +157,7 @@ function setup() {
 
 
 function draw() {
-    console.log(touches)
+//     console.log(touches)
     barFace.visible = false;
     backgroundSound.setVolume(volume);
     setEfxVolume();
@@ -177,7 +177,7 @@ function draw() {
 
     resizeCanvas(width, height);
 
-    console.log(deviceMode);
+//     console.log(deviceMode);
 
     if (!paused) {
         // function gator() { alert('Alligator!!!!'); } setTimeout(gator, 7000);
